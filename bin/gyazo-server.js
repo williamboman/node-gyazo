@@ -11,7 +11,8 @@
       debug: false,
       port: 8080,
       upload_dir: '/tmp',
-      required_id: null
+      required_id: null,
+      host: '0.0.0.0'
     });
     listen(options);
   }
@@ -28,7 +29,7 @@
         util.puts('Request: ' + method + ' ' + request.url);
       });
     }
-    server.listen(options.port);
+    server.listen(options.port, options.host);
   }
 
   function optparser(argv, options) {
